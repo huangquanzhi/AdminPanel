@@ -65,6 +65,10 @@ module.exports = {
                 'NODE_ENV': JSON.stringify(ENV)
             }
         }),
-        extractSass,
+        new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery'
+        }),
+        extractSass
     ],
 };

@@ -1,4 +1,20 @@
+// configuration and helpers
+@import 'abstracts/varibles';
 
+// vendors
+@import 'vendors/normalize';
+
+// base
 @import 'base/base';
 
-@import 'vendors/normalize';
+// layouts
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/side-menu';
+
+@import 'layout/home-page';
+@import 'layout/group-page';
+
+// components
+@import 'components/button';
+@import 'components/input';

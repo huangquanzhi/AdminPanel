@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import 'jquery';
+import 'bootstrap-loader';
 import configStore from './src/store';
 import BaseContainer from './src/containers/BaseContainer';
 

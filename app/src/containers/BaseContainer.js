@@ -1,36 +1,79 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+// include containers
+import SideMenuContainer from './SideMenuContainer';
+import HomePageContainer from './HomePageContainer';
+import GroupPageContainer from './GroupPageContainer';
+
+// include components
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+// constants
+import {
+  VIEW_LIST_HOME,
+  VIEW_LIST_GROUP
+} from '../constants/application';
 
 class BaseContainer extends Component {
   constructor(props) {
     super(props);
+    this.renderView = this.renderView.bind(this);
+  }
+
+  renderView() {
+    const { application: { view } } = this.props;
+    switch (view) {
+      case VIEW_LIST_HOME:
+        return <HomePageContainer key="home-page-key" />;
+      case VIEW_LIST_GROUP:
+        return <GroupPageContainer key="group-page-key" />;
+      default:
+        return null;
+    }
   }
 
   render() {
     return (
       <main>
-        <h1> Hello </h1>
+        <Header />
+
+        <ReactCSSTransitionGroup
+          transitionName="side-menu__transition"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          <SideMenuContainer key="side-menu-key" />
+        </ReactCSSTransitionGroup>
+
+        <ReactCSSTransitionGroup
+          transitionName="home-page__transition"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          { this.renderView() }
+        </ReactCSSTransitionGroup>
+        <Footer />
       </main>
     );
   }
 }
 
 const propTypes = {
-
+  application: PropTypes.object.isRequired
 };
 
 BaseContainer.propTypes = propTypes;
 
 
-function mapStateToProps() {
-  return {};
-}
-
-function mapDispatchToProps() {
+function mapStateToProps(state) {
   return {
+    application: state.application
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BaseContainer);
+
+export default connect(mapStateToProps, null)(BaseContainer);
