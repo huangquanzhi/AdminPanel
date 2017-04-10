@@ -7,14 +7,18 @@
 // base
 @import 'base/base';
 
-// layouts
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/side-menu';
+// page
+@import 'page/header';
+@import 'page/footer';
+@import 'page/side-menu';
 
-@import 'layout/home-page';
-@import 'layout/group-page';
+@import 'page/home-page';
+@import 'page/group-page';
+
+// layout
+@import 'layout/widget-container';
 
 // components
 @import 'components/button';
 @import 'components/input';
+@import 'components/widget';

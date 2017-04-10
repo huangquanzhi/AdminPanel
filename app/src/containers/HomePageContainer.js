@@ -11,6 +11,8 @@ import {
 // actions
 import * as appActions from '../actions/application';
 
+// components
+import WidgetGroup from '../components/widget/WidgetGroup';
 
 class HomePageContainer extends Component {
   constructor(props) {
@@ -26,6 +28,47 @@ class HomePageContainer extends Component {
   render() {
     return (
       <div className="home-page">
+        <WidgetGroup
+          items={
+            [
+              {
+                size: {
+                  width: 4,
+                  height: 2
+                },
+                element: <span> Test </span>
+              },
+              {
+                size: {
+                  width: 4,
+                  height: 2
+                },
+                element: <span> Test 2</span>
+              },
+              {
+                size: {
+                  width: 2,
+                  height: 2
+                },
+                element: <span> Test 3</span>
+              },
+              {
+                size: {
+                  width: 2,
+                  height: 2
+                },
+                element: <span> Test </span>
+              },
+              {
+                size: {
+                  width: 2,
+                  height: 2
+                },
+                element: <span> Test </span>
+              }
+            ]
+          }
+        />
         <button value="Change" onClick={this.handleChangeView} />
       </div>
     );
