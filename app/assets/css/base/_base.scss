@@ -25,7 +25,7 @@ html, body {
 }
 
 main {
-  background-color: $background-color;
   position: relative;
+  background-image: url('./static/app/assets/images/background.jpg');
   height: 100vh;
 }

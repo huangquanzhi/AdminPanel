@@ -55,4 +55,4 @@ const propTypes = {
   containerClass: PropTypes.string,
 };
 
-Widget.propTypes = propTypes;
+WidgetGroup.propTypes = propTypes;

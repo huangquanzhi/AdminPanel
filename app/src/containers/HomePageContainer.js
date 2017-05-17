@@ -36,7 +36,12 @@ class HomePageContainer extends Component {
                   width: 4,
                   height: 2
                 },
-                element: <span> Test </span>
+                element: (<div>
+                <h1> Jackie Huang </h1>
+                <h2> Programmer </h2>
+                <h3> Just developing </h3>
+                <h4> YOLO </h4>
+                </div>)
               },
               {
                 size: {
@@ -46,24 +51,12 @@ class HomePageContainer extends Component {
                 element: <span> Test 2</span>
               },
               {
-                size: {
-                  width: 2,
-                  height: 2
-                },
                 element: <span> Test 3</span>
               },
               {
-                size: {
-                  width: 2,
-                  height: 2
-                },
                 element: <span> Test </span>
               },
               {
-                size: {
-                  width: 2,
-                  height: 2
-                },
                 element: <span> Test </span>
               }
             ]

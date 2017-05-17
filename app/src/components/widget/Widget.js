@@ -37,4 +37,12 @@ const propTypes = {
   contentClass: PropTypes.string,
 };
 
+const defaults = {
+  size: {
+    width: 2,
+    height: 2,
+  }
+}
+
 Widget.propTypes = propTypes;
+Widget.defaultProps = defaults;
