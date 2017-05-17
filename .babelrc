@@ -4,7 +4,5 @@
     "react",
     "airbnb",
     "stage-0",
-    "flow"
-   ],
-   "plugins": ["transform-flow-strip-types"]
+   ]
 }

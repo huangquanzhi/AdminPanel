@@ -15,10 +15,9 @@ class LeftMenuContainer extends Component {
       <div className="left side-menu">
           <div className="sidebar-inner slimscrollleft">
 
-              <!-- User -->
               <div className="user-box">
                   <div className="user-img">
-                      <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" className="img-circle img-thumbnail img-responsive">
+                      <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" className="img-circle img-thumbnail img-responsive" />
                       <div className="user-status offline"><i className="zmdi zmdi-dot-circle"></i></div>
                   </div>
                   <h5><a href="#">Mat Helme</a> </h5>
@@ -36,11 +35,9 @@ class LeftMenuContainer extends Component {
                       </li>
                   </ul>
               </div>
-              <!-- End User -->
 
-              <!--- Sidemenu -->
               <SideMenu />
-              <!-- Sidebar -->
+
               <div className="clearfix"></div>
 
           </div>

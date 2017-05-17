@@ -3,11 +3,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require("path");
 var ENV = process.env.ENV = process.env.NODE_ENV = 'development';
 
-const extractSass = new ExtractTextPlugin({
-  filename: "bundle.css",
-  disable: process.env.NODE_ENV === 'development',
-})
-
 module.exports = {
     entry: [
         'babel-polyfill',
@@ -40,17 +35,7 @@ module.exports = {
                 loader: 'eslint-loader',
                 exclude: /node_modules/
             },
-            {
-                test: /\.scss$/,
-                use: extractSass.extract({
-                  fallback: 'style-loader',
-                  use: [{
-                    loader: 'css-loader',
-                  }, {
-                    loader: 'sass-loader',
-                  }],
-                }),
-            },
+            {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
             {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff'},
             {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream'},
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
@@ -69,6 +54,5 @@ module.exports = {
           $: 'jquery',
           jQuery: 'jquery'
         }),
-        extractSass
     ],
 };

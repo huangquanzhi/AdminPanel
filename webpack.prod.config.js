@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 var ENV = process.env.ENV = process.env.NODE_ENV = 'production';
 
+const extractLess = new ExtractTextPlugin({
+  filename: "bundle.css",
+  disable: process.env.NODE_ENV === 'production',
+});
+
 module.exports = {
     context: path.join(__dirname, 'app'),
     entry: [
