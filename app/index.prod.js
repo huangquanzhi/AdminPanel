@@ -6,7 +6,7 @@ import 'bootstrap-loader';
 import configStore from './src/store';
 import BaseContainer from './src/containers/BaseContainer';
 
-import './assets/css/main.scss';
+import './assets/css/menu.less';
 
 const store = configStore();
 

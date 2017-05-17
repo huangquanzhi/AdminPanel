@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // include containers
-import SideMenuContainer from './SideMenuContainer';
+import LeftMenuContainer from './LeftMenuContainer';
 import HomePageContainer from './HomePageContainer';
 import GroupPageContainer from './GroupPageContainer';
 
@@ -46,7 +46,7 @@ class BaseContainer extends Component {
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}
         >
-          <SideMenuContainer key="side-menu-key" />
+          <LeftMenuContainer key="left-menu-key" />
         </ReactCSSTransitionGroup>
 
         <ReactCSSTransitionGroup

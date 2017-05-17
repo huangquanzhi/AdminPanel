@@ -7,7 +7,7 @@ import configStore from './src/store';
 import DevTools from './src/DevTools';
 import BaseContainer from './src/containers/BaseContainer';
 
-import './assets/css/main.scss';
+import './assets/css/menu.less';
 
 const store = configStore();
 
