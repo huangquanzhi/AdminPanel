@@ -3,52 +3,56 @@ import React, { PureComponent } from 'react';
 export default class Header extends PureComponent {
   render() {
     return (
-      <div class="topbar">
+      <div className="topbar">
+        <div className="topbar-left">
+          <a href="index.html" className="logo">
+            <span>Admin Panel</span>
+            <i className="zmdi zmdi-layers" />
+          </a>
+        </div>
 
-          <div class="topbar-left">
-              <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+        <div className="navbar navbar-default" role="navigation">
+          <div className="container">
+            <ul className="nav navbar-nav navbar-left">
+              <li>
+                <button className="button-menu-mobile open-left">
+                  <i className="zmdi zmdi-menu" />
+                </button>
+              </li>
+              <li>
+                <h4 className="page-title">Dashboard</h4>
+              </li>
+            </ul>
+
+            <ul className="nav navbar-nav navbar-right">
+              <li>
+                <div className="notification-box">
+                  <ul className="list-inline m-b-0">
+                    <li>
+                      <a className="right-bar-toggle">
+                        <i className="zmdi zmdi-notifications-none" />
+                      </a>
+                      <div className="noti-dot">
+                        <span className="dot" />
+                        <span className="pulse" />
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li className="hidden-xs">
+                <form role="search" className="app-search">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="form-control"
+                  />
+                  <a href=""><i className="fa fa-search" /></a>
+                </form>
+              </li>
+            </ul>
           </div>
-
-          <div class="navbar navbar-default" role="navigation">
-              <div class="container">
-
-                  <ul class="nav navbar-nav navbar-left">
-                      <li>
-                          <button class="button-menu-mobile open-left">
-                              <i class="zmdi zmdi-menu"></i>
-                          </button>
-                      </li>
-                      <li>
-                          <h4 class="page-title">Blank Page</h4>
-                      </li>
-                  </ul>
-
-                  <ul class="nav navbar-nav navbar-right">
-                      <li>
-                          <div class="notification-box">
-                              <ul class="list-inline m-b-0">
-                                  <li>
-                                      <a href="javascript:void(0);" class="right-bar-toggle">
-                                          <i class="zmdi zmdi-notifications-none"></i>
-                                      </a>
-                                      <div class="noti-dot">
-                                          <span class="dot"></span>
-                                          <span class="pulse"></span>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </div>
-                      </li>
-                      <li class="hidden-xs">
-                          <form role="search" class="app-search">
-                              <input type="text" placeholder="Search..."
-                                     class="form-control">
-                              <a href=""><i class="fa fa-search"></i></a>
-                          </form>
-                      </li>
-                  </ul>
-
-              </div>          </div>
+        </div>
       </div>
     );
   }

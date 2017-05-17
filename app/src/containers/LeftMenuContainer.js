@@ -14,7 +14,7 @@ class LeftMenuContainer extends PureComponent {
           <div className="user-box">
             <div className="user-img">
               <img
-                src="assets/images/users/avatar-1.jpg"
+                src="assets/images/catinbox.png"
                 alt="user-img"
                 title="Jackie huang"
                 className="img-circle img-thumbnail img-responsive"

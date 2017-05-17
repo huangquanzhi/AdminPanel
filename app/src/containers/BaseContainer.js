@@ -28,23 +28,28 @@ class BaseContainer extends Component {
 
   render() {
     return (
-      <main>
-        <ReactCSSTransitionGroup
-          transitionName="side-menu__transition"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-        >
-          <LeftMenuContainer key="left-menu-key" />
-        </ReactCSSTransitionGroup>
+      <div className="fixed-left">
+        <div id="wrapper">
+          <Header />
+          <ReactCSSTransitionGroup
+            transitionName="side-menu__transition"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+          >
+            <LeftMenuContainer key="left-menu-key" />
+          </ReactCSSTransitionGroup>
 
-        <ReactCSSTransitionGroup
-          transitionName="home-page__transition"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-        >
-          { this.renderView() }
-        </ReactCSSTransitionGroup>
-      </main>
+          <ReactCSSTransitionGroup
+            transitionName="home-page__transition"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}
+          >
+            <main>
+              { this.renderView() }
+            </main>
+          </ReactCSSTransitionGroup>
+        </div>
+      </div>
     );
   }
 }
