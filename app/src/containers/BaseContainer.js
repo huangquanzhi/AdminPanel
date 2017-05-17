@@ -5,18 +5,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // include containers
 import LeftMenuContainer from './LeftMenuContainer';
-import HomePageContainer from './HomePageContainer';
-import GroupPageContainer from './GroupPageContainer';
 
 // include components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 // constants
-import {
-  VIEW_LIST_HOME,
-  VIEW_LIST_GROUP
-} from '../constants/application';
 
 class BaseContainer extends Component {
   constructor(props) {
@@ -27,10 +21,6 @@ class BaseContainer extends Component {
   renderView() {
     const { application: { view } } = this.props;
     switch (view) {
-      case VIEW_LIST_HOME:
-        return <HomePageContainer key="home-page-key" />;
-      case VIEW_LIST_GROUP:
-        return <GroupPageContainer key="group-page-key" />;
       default:
         return null;
     }
@@ -39,8 +29,6 @@ class BaseContainer extends Component {
   render() {
     return (
       <main>
-        <Header />
-
         <ReactCSSTransitionGroup
           transitionName="side-menu__transition"
           transitionEnterTimeout={500}
@@ -56,7 +44,6 @@ class BaseContainer extends Component {
         >
           { this.renderView() }
         </ReactCSSTransitionGroup>
-        <Footer />
       </main>
     );
   }
