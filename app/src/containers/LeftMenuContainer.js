@@ -9,51 +9,21 @@ class LeftMenuContainer extends PureComponent {
   render() {
     return (
       <div className="left side-menu">
-        <div className="sidebar-inner slimscrollleft">
-
-          <div className="user-box">
-            <div className="user-img">
-              <img
-                src="assets/images/catinbox.png"
-                alt="user-img"
-                title="Jackie huang"
-                className="img-circle img-thumbnail img-responsive"
-              />
-              <div className="user-status offline">
-                <i className="zmdi zmdi-dot-circle" />
-              </div>
-            </div>
-            <h5><a>Jackie Huang</a> </h5>
-            <ul className="list-inline">
-              <li>
-                <a>
-                  <i className="zmdi zmdi-settings" />
-                </a>
-              </li>
-
-              <li>
-                <a className="text-custom">
-                  <i className="zmdi zmdi-power" />
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <SideMenu />
-
-          <div className="clearfix" />
-        </div>
+        <SideMenu />
       </div>
     );
   }
 }
 
 const propTypes = {
-
+  // variables
 };
 
-LeftMenuContainer.propTypes = propTypes;
+const defaultProps = {
+}
 
+LeftMenuContainer.propTypes = propTypes;
+LeftMenuContainer.defaultProps = defaultProps;
 
 function mapStateToProps() {
   return {};
