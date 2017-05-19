@@ -5,7 +5,7 @@ export default class Footer extends PureComponent {
   render() {
     return (
       <footer className="footer">
-        Footer
+          2017
       </footer>
     );
   }

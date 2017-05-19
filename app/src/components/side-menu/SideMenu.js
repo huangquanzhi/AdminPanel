@@ -39,6 +39,7 @@ export default class SideMenu extends PureComponent {
     return (
       <div className="sidebar-inner slimscrollleft">
         <div id="sidebar-menu">
+          { this.renderUserBox() }
           <ul>
             <SideMenuItem />
           </ul>

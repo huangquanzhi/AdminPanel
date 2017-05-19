@@ -5,14 +5,18 @@ import {
 
 
 const initialState = {
-  view: VIEW_LIST_HOME
+  currentView: VIEW_LIST_HOME,
+  applicationTitle: '',
+  viewConfig: {
+    pageTitle: '',
+  }
 };
 
 const application = (state = initialState, action) => {
   switch (action.type) {
     case APPLICATION_SET_VIEW:
       return Object.assign({}, state, {
-        view: action.view
+        currentView: action.view
       });
     default:
       return state;

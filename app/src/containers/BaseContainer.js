@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import DashboardContainer from './views/DashboardContainer';
+
+import {
+  VIEW_LIST_HOME
+} from '../constants/application';
+
 // include containers
 import LeftMenuContainer from './LeftMenuContainer';
 
@@ -19,8 +25,10 @@ class BaseContainer extends Component {
   }
 
   renderView() {
-    const { application: { view } } = this.props;
-    switch (view) {
+    const { application: { currentView } } = this.props;
+    switch (currentView) {
+      case VIEW_LIST_HOME:
+        return <DashboardContainer />
       default:
         return null;
     }
@@ -30,7 +38,7 @@ class BaseContainer extends Component {
     return (
       <div className="fixed-left">
         <div id="wrapper">
-          <Header />
+          <Header applicationTitle="Admin Panel" pageTitle="Dashboard"/>
           <ReactCSSTransitionGroup
             transitionName="side-menu__transition"
             transitionEnterTimeout={500}

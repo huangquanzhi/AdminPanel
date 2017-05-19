@@ -26,7 +26,7 @@ export default class Header extends PureComponent {
           </button>
         </li>
         <li>
-          <h4 className="page-title">{ pageTitle }</h4>
+          <h4 className="page-title">{pageTitle}</h4>
         </li>
       </ul>
     );
